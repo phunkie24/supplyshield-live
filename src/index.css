@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --color-primary: oklch(0.3462 0.0736 256.04);
+  --color-on-primary: oklch(1.0 0 0);
+  --color-secondary: oklch(0.3717 0.0392 257.29);
+  --color-accent: oklch(0.596 0.1274 163.23);
+  --color-background: oklch(0.2077 0.0398 265.75);
+  --color-foreground: oklch(1.0 0 0);
+  --color-muted: oklch(0.2169 0.0436 265.39);
+  --color-muted-foreground: oklch(0.5 0.03 260);
+  --color-border: rgba(255,255,255,0.08);
+  --color-destructive: oklch(0.5771 0.2152 27.33);
+  --color-ring: oklch(0.3462 0.0736 256.04);
+}
+
+* {
+  scrollbar-color: rgba(255,255,255,0.08) transparent;
+  scrollbar-width: thin;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: oklch(0.3462 0.0736 256.04 / 0.3);
+  color: white;
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid oklch(0.3462 0.0736 256.04 / 0.5);
+  outline-offset: 2px;
+}
+
+/* Input autofill override */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px oklch(0.2169 0.0436 265.39) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Recharts tooltip fix */
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
